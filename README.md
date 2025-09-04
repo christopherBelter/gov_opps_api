@@ -33,16 +33,16 @@ opp_info_simple <- simplify_opps(opp_info, "forecast")
 
 ## Query parameters
 The `create_query()` function has a series of somewhat cryptically named arguments that correspond to search options in the search2 REST API endpoint. Here are some more details about what each argument is and what the available options are. 
-*	rows: the number of records to retrieve per request. The current default is 25.
-*	keyword: a free text search that presumably searches across multiple fields in the record. What fields are searched is not currently specified.
-*	oppNum: The opportunity number or (presumably) numbers you want to search for. I don’t currently know how to search for more than one at a time.
-*	eligibilities: what kinds of entities are eligible to apply. Options include county governments, private institutions of higher education, small businesses, etc.
-*	agencies: top-level agencies like NSF, HHS, or NIH. To search for NIH, use “HHS-NIH11”.
-*	oppStatuses: Current status of the opportunity. Options are ‘forecasted’, ‘posted’, ‘closed’, and ‘archived’. You can search for multiple options using the syntax ‘closed|archived’. Opportunities that are ‘posted’ are currently open for applications, while those that are ‘closed’ and ‘archived’ are not.
-*	aln: Government-wide assistance listing number of the opportunity. For the NIH, it acts as the equivalent of the sponsoring Institute(s) or Center(s). It appears identical to the cfda. aln/cfda numbers are searchable at https://sam.gov/search/. The API currently ignores this parameter, so use the cfda instead.
-*	fundingCategories: Government-wide funding category of the opportunity. Options include ‘Health’, ‘Education’, ‘Environment, Food and Nutrition’, ‘Income Security and Social Services’, and ‘Transportation’. 
-*	fundingInstruments: The type of funding mechanism solicited by the opportunity. Options are ‘grant’, ‘cooperative agreement’, ‘procurement contract’, and ‘other’.
-*	startRecordNum: The starting number of the record you want to retrieve. Numbering for this API starts at 0, which is the default value.
-*	cfda: Assistance listing number from the old Catalog of Federal Domestic Assistance. It appears identical to the aln and acts (for the NIH) as an IC search. Use this instead of the aln, because the API actually uses this as a filter. Options include ’93.866’ for NIA, ’93.865’ for NICHD, ’93.867’ for NEI, etc. Some ICs, like NHLBI and NCI, have multiple cfda numbers. aln/cfda numbers are searchable at https://sam.gov/search/.
-*	dateRangeOptions: The API response lists this as a search option, but it isn’t documented, and I can’t figure out what values the API will accept or what the corresponding date ranges are. 
-*	sortBy: Presumably the field or fields you wish to sort the results by, but there is no documentation about what they are or how to use them.
+*	__rows__: the number of records to retrieve per request. The current default is 25.
+*	__keyword__: a free text search that presumably searches across multiple fields in the record. What fields are searched is not currently specified.
+*	__oppNum__: The opportunity number or (presumably) numbers you want to search for. I don’t currently know how to search for more than one at a time.
+*	__eligibilities__: what kinds of entities are eligible to apply. Options include county governments, private institutions of higher education, small businesses, etc.
+*	__agencies__: top-level agencies like NSF, HHS, or NIH. To search for NIH, use “HHS-NIH11”.
+*	__oppStatuses__: Current status of the opportunity. Options are ‘forecasted’, ‘posted’, ‘closed’, and ‘archived’. You can search for multiple options using the syntax ‘closed|archived’. Opportunities that are ‘posted’ are currently open for applications, while those that are ‘closed’ and ‘archived’ are not.
+*	__aln__: Government-wide assistance listing number of the opportunity. For the NIH, it acts as the equivalent of the sponsoring Institute(s) or Center(s). It appears identical to the cfda. aln/cfda numbers are searchable at https://sam.gov/search/. The API currently ignores this parameter, so use the cfda instead.
+*	__fundingCategories__: Government-wide funding category of the opportunity. Options include ‘Health’, ‘Education’, ‘Environment, Food and Nutrition’, ‘Income Security and Social Services’, and ‘Transportation’. 
+*	__fundingInstruments__: The type of funding mechanism solicited by the opportunity. Options are ‘grant’, ‘cooperative agreement’, ‘procurement contract’, and ‘other’.
+*	__startRecordNum__: The starting number of the record you want to retrieve. Numbering for this API starts at 0, which is the default value.
+*	__cfda__: Assistance listing number from the old Catalog of Federal Domestic Assistance. It appears identical to the aln and acts (for the NIH) as an IC search. Use this instead of the aln, because the API actually uses this as a filter. Options include ’93.866’ for NIA, ’93.865’ for NICHD, ’93.867’ for NEI, etc. Some ICs, like NHLBI and NCI, have multiple cfda numbers. aln/cfda numbers are searchable at https://sam.gov/search/.
+*	__dateRangeOptions__: The API response lists this as a search option, but it isn’t documented, and I can’t figure out what values the API will accept or what the corresponding date ranges are. 
+*	__sortBy__: Presumably the field or fields you wish to sort the results by, but there is no documentation about what they are or how to use them.
